@@ -59,7 +59,7 @@
         </config-file>
         <config-file target="AndroidManifest.xml" parent="application">
           <provider
-              android:name="org.apache.cordova.camera.FileProvider"
+              android:name="androidx.core.content.FileProvider"
               android:authorities="${applicationId}.cordova.plugin.camera.provider"
               android:exported="false"
               android:grantUriPermissions="true" >
@@ -72,15 +72,14 @@
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/FileHelper.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/ExifHelper.java" target-dir="src/org/apache/cordova/camera" />
-        <source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/xml/camera_provider_paths.xml" target-dir="res/xml" />
 
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
           </js-module>
 
-        <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
-        <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
+        <preference name="ANDROIDX_VERSION" default="1.+" />
+        <framework src="androidx.legacy:legacy-support-v4:$ANDROIDX_VERSION" />
 
       </platform>
 
